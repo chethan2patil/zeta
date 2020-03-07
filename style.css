@@ -5,13 +5,13 @@ body {
   
   .categoriesDiv {
     overflow: hidden;
-    background-color: #418c46;
+    background-color: #f1f1f1;
   }
   
   .categoriesDiv a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #040404;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="ghpages-materialize.css">
 </head>
-<body onload="onLoadHandler()" id ="fullBody">
+<body id ="fullBody">
     
     <nav>
         <div class="nav-wrapper">
@@ -26,7 +26,8 @@
           <div class="row">
             <div class="input-field col s12">
               <i class="material-icons prefix">textsms</i>
-              <input type="text" id="autocomplete-input" class="autocomplete">
+            </br>
+              <input type="text" id="autocomplete-input"  onkeyup="searchRecipes()" class="autocomplete">
             </div>
           </div>
         </div>

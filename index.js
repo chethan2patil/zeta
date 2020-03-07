@@ -1,34 +1,60 @@
 var categories = [];
 var recipes = [];
-// onload function 
-function onLoadHandler() {
-    fetch('http://temp.dash.zeta.in/food.php')
-        .then(response => {
-            console.log(response.categories);
-            return response.json();
-        })
-        .then(function (data) {
-            categories = data.categories;
-            recipes = data.recipes;
-            createCategory(categories, recipes);
-            return categories;
-        })
-};
 
-function createCategory(categoriesList, recipesList) {
+!async function(){
+    let data = await fetch("http://temp.dash.zeta.in/food.php")
+        .then((response) => response.json())
+        .then(data => {
+             categories = data.categories;
+            recipes = data.recipes;
+            createCategory(categories);
+            createRecipesList(recipes);
+            return categories,recipes ;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    
+    console.log(recipes);    
+
+    }();
+console.log(recipes, categories); 
+ function searchRecipes() {
+    
+    let inputValue = document.getElementById("autocomplete-input").value;
+    var searchTerm = inputValue;
+    console.log(inputValue);
+    let matchedTerms = [];
+    searchTerm = searchTerm.toLowerCase();
+    // -----------------ans1--------------------
+    matchedTerms = recipes.filter(function(i) {
+        return i.name.toLowerCase().indexOf(searchTerm) > -1;
+    });
+    createRecipesList(matchedTerms);
+ }
+
+function createCategory(categoriesList) {
 
     const categoriesElement = document.getElementById("categoriesDivId");
-    const recipesListDiv = document.getElementById("recipesList");
+
 
     // categories view
     for (let i = 0; i < categoriesList.length; i++) {
+       
+        let icon = document.createElement("i");
+        icon.className = "material-icons";
+        icon.innerHTML = "cake";
         let aElement = document.createElement("a");
         aElement.className = "categoriesDiv";
         aElement.id = categoriesList[i].name;
         aElement.innerText = categoriesList[i].name;
+        aElement.appendChild(icon);
         categoriesElement.appendChild(aElement);
+       
     }
-
+}
+function createRecipesList (recipesList){
+    const recipesListDiv = document.getElementById("recipesList");
     //recipesList view
     let ulElement = document.createElement("ul");
     ulElement.className = "recipesUl"
