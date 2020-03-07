@@ -59,43 +59,43 @@ function createCategory(categoriesList, recipesList) {
     recipesListDiv.appendChild(ulElement);
 
     //recipesList in card
-    const cardDiv = document.getElementById("card");
+    // const cardDiv = document.getElementById("card");
 
-    for (let i = 0; i < recipesList.length; i++) {
+    // for (let i = 0; i < recipesList.length; i++) {
 
-        let colDivCard = document.createElement("div");
-        colDivCard.className = "col s3"
-        let divCard = document.createElement("div");
-        divCard.className = "card";
-        let divElementCard = document.createElement("div");
-        divElementCard.className = "card-image";
-        let cardImage = document.createElement("img");
-        cardImage.src = recipesList[i].image;
-        cardImage.className = recipesList[i].category;
-        let cardSpan = document.createElement("span");
-        cardSpan.innerHTML = recipesList[i].name;
-        let cardANode = document.createElement("a");
-        cardANode.className = "btn-floating halfway-fab waves-effect waves-light red";
-        let iCardNode = document.createElement("i");
-        iCardNode.className = "material-icons";
-        iCardNode.innerHTML = "add";
-        divElementCard.appendChild(cardImage);
-        divElementCard.appendChild(cardSpan);
-        divElementCard.appendChild(cardANode);
-        cardANode.appendChild(iCardNode);
+    //     let colDivCard = document.createElement("div");
+    //     colDivCard.className = "col s3"
+    //     let divCard = document.createElement("div");
+    //     divCard.className = "card";
+    //     let divElementCard = document.createElement("div");
+    //     divElementCard.className = "card-image";
+    //     let cardImage = document.createElement("img");
+    //     cardImage.src = recipesList[i].image;
+    //     cardImage.className = recipesList[i].category;
+    //     let cardSpan = document.createElement("span");
+    //     cardSpan.innerHTML = recipesList[i].name;
+    //     let cardANode = document.createElement("a");
+    //     cardANode.className = "btn-floating halfway-fab waves-effect waves-light red";
+    //     let iCardNode = document.createElement("i");
+    //     iCardNode.className = "material-icons";
+    //     iCardNode.innerHTML = "add";
+    //     divElementCard.appendChild(cardImage);
+    //     divElementCard.appendChild(cardSpan);
+    //     divElementCard.appendChild(cardANode);
+    //     cardANode.appendChild(iCardNode);
 
-        divCard.appendChild(divElementCard);
-        colDivCard.appendChild(divCard);
-        cardDiv.appendChild(colDivCard);
+    //     divCard.appendChild(divElementCard);
+    //     colDivCard.appendChild(divCard);
+    //     cardDiv.appendChild(colDivCard);
         
-        let divSecondElementCard = document.createElement("div");
-        divSecondElementCard.className = "card-content";
-        let titleNode = document.createElement("p");
-        titleNode.innerHTML = recipesList[i].details;
+    //     let divSecondElementCard = document.createElement("div");
+    //     divSecondElementCard.className = "card-content";
+    //     let titleNode = document.createElement("p");
+    //     titleNode.innerHTML = recipesList[i].details;
 
-        divSecondElementCard.appendChild(titleNode);
-        divCard.appendChild(divSecondElementCard);
+    //     divSecondElementCard.appendChild(titleNode);
+    //     divCard.appendChild(divSecondElementCard);
 
-    }
+    // }
 
 }
