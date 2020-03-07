@@ -42,8 +42,8 @@ function createCategory(categoriesList, recipesList) {
         imageNode.className = recipesList[i].category;
         liElement.appendChild(imageNode);
         let titleNode = document.createElement("p");
-        titleNode.innerHTML = recipesList[i].category;
-
+        titleNode.innerHTML = recipesList[i].name;
+        titleNode.className = "categoryName";
         liElement.appendChild(titleNode);
         let spanCartNode = document.createElement("span");
         let addToCart = document.createElement("button");
@@ -87,6 +87,7 @@ function createCategory(categoriesList, recipesList) {
         divCard.appendChild(divElementCard);
         colDivCard.appendChild(divCard);
         cardDiv.appendChild(colDivCard);
+        
         let divSecondElementCard = document.createElement("div");
         divSecondElementCard.className = "card-content";
         let titleNode = document.createElement("p");

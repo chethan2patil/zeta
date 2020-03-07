@@ -54,10 +54,15 @@ body {
     }
   }
   #recipesImage{
-      width: 210px;
+      width: 400px;
       height: 210px;
       float:clear;
   }
+  .categoryName{
+    font-size: 12px;
+  font-weight: 800;
+  width: 287px;
+}
   
     .recipesUl{
        display: flex;
@@ -66,6 +71,7 @@ body {
        justify-content: space-between;
        list-style: none;
        text-decoration: none;
+       margin: 20px;
    }
 
    .addToCart {
