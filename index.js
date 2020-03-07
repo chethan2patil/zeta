@@ -1,7 +1,7 @@
 var categories = [];
 var recipes = [];
 // onload function 
-function onInputHandler() {
+function onLoadHandler() {
   fetch('http://temp.dash.zeta.in/food.php')
     .then(response => {
       console.log(response.categories);

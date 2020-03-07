@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="zeta.js"></script>
+<script src="index.js"></script>
 <style>
 body {
   margin: 0;
@@ -74,17 +74,14 @@ body {
      list-style: none;
      text-decoration: none;
  }
- .movieNameInput{
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
+
 </style>
 </head>
-<body onload="onInputHandler()" id ="fullBody">
+<body onload="onLoadHandler()" id ="fullBody">
     <div class="wrapper">      
-        <input type="text" name="name" required id="MOVIEINPUT" onkeyup="onInputHandler()" class="movieNameInput"
-            placeholder="Search for names..">
-        <button type="submit" class="input-submit-search">
+        <input type="text" name="name" />
+            placeholder="Search ">
+        <button type="submit" >
             <i class="fa fa-search">
             </i>
         </button>    
