@@ -28,8 +28,28 @@ function searchRecipes() {
         console.log(inputValue);
         let matchedTerms = [];
         searchTerm = searchTerm.toLowerCase();
+        console.log("recipes", recipes)
         matchedTerms = recipes.filter(function (i) {
             return (i.name.toLowerCase().indexOf(searchTerm) > -1) ;
+        });
+        createRecipesList(matchedTerms);
+    }, 1000);
+}
+
+function searchByCategory(categoryName) {
+
+    // delay one sec before search such that wont have to make autocomplete every key stroke
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+       // 
+        var searchTerm = categoryName;
+        console.log(categoryName);
+        let matchedTerms = [];
+        searchTerm = searchTerm.toLowerCase();
+        console.log("recipes", recipes)
+        matchedTerms = recipes.filter(function (i) {
+           // return ((i.name.toLowerCase()) && (i.category.toLowerCase()).indexOf(searchTerm) > -1) ;
+           return (i.name.toLowerCase().indexOf(searchTerm) > -1) ;
         });
         createRecipesList(matchedTerms);
     }, 1000);
@@ -42,7 +62,6 @@ function createCategory(categoriesList) {
     for (let i = 0; i < categoriesList.length; i++) {
         let aElement = document.createElement("a");
         aElement.className = "categories-a";
-       // aElement.href = searchRecipes(categoriesList[i].name);
         let categoryElement = document.createElement("div");
         categoryElement.className = "category";
         let imgElement = document.createElement("img");
